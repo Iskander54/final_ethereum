@@ -99,8 +99,8 @@ class Validate extends Component {
         <div className="Validate">
       <h1>Validate</h1>
       <div>
-      <p>List of Mortgages your are involved
-          <div> Transaction Id-- <strong>Client's address</strong> -- <strong>Property Identification Number -- <strong>Amount</strong> -- <strong>Executed ?</strong>({this.state.isparty.length})</strong></div>
+      <p>List of Mortgages your are involved in
+          <div> <strong>Transaction Id </strong>-- <strong>Client's address</strong> -- <strong>Property Identification Number -- <strong>Amount</strong> -- <strong>Executed ?</strong>({this.state.isparty.length})</strong></div>
           <div>{this.state.tidlist}
    {this.state.isparty.map(txt =>  <p>{txt.tid} -- {txt.mortgage.beneficiary} -- {txt.mortgage.pin} -- {txt.mortgage.amount} -- {txt.mortgage.executed.toString()}</p>)}</div></p>
       
@@ -114,8 +114,8 @@ class Validate extends Component {
           </form>
           </div>
           <div>
-          <p>List of Mortgages your confirmed
-          <div> Transaction Id-- <strong>Client's address</strong> -- <strong>Property Identification Number -- <strong>Amount</strong> -- <strong>Executed ?</strong>({this.state.confirmed.length})</strong></div>
+          <p>List of Mortgages your confirmed in
+          <div><strong> Transaction Id</strong> -- <strong>Client's address</strong> -- <strong>Property Identification Number -- <strong>Amount</strong> -- <strong>Executed ?</strong>({this.state.confirmed.length})</strong></div>
           <div>{this.state.tidlist}
    {this.state.confirmed.map(txt =>  <p style={{color: txt.mortgage.executed === true ?  "green" : "red"  }}>{txt.tid} -- {txt.mortgage.beneficiary} -- {txt.mortgage.pin} -- {txt.mortgage.amount} -- <strong>{txt.mortgage.executed.toString()}</strong></p>)}</div></p>
       

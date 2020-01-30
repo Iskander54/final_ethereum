@@ -112,14 +112,14 @@ class Create extends Component {
     }
     return (
       <div className="Home">
-        <h1>Here the bank can create a mortgage transaction</h1>
+        <h1>Here the anybody can create a mortgage transaction to loan money to anybody</h1>
         <p>List of registered properties
           <div><strong>Owner's address</strong> -- <strong>Property Identification Number ({this.state.storageValue})</strong></div>
           <div>
    {this.state.properties.map(txt => <p>{txt.property.owner} 
    -- {txt.pin}</p>)}</div></p>
 
-   <p>List of Mortgages
+   <p>List of Mortgages transaction on the blockchain
           <div> Transaction Id-- <strong>Client's address</strong> -- <strong>Property Identification Number -- <strong>Amount</strong> -- <strong>Executed ?</strong>({this.state.mortgageValue})</strong></div>
           <div>
    {this.state.mlist.map(txt => <p>{txt.tid} -- {txt.mortgage.beneficiary} -- {txt.mortgage.pin} -- 

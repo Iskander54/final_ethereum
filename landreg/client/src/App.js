@@ -62,7 +62,7 @@ class App extends Component {
       this.setState({ web3, accounts, contract: instance, mortgage:instance2, contract_addr:deployedNetwork.address,user:accounts[0] }, this.runExample);
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
-      console.log(Registry)
+      //console.log(Registry)
   };
 
   runExample = async () => {

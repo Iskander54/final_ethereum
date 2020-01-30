@@ -66,7 +66,7 @@ class Admin extends Component {
     event.preventDefault();
     const { accounts, contract } = this.props;
     const resp = await contract.methods.newProperty(this.state.add_address,this.state.add_pin).send({from:accounts[0]});
-    alert('Property added : ' + resp);
+    alert('Property'+this.state.add_pin+' added');
     this.checkProperties();
     
   }
@@ -84,7 +84,7 @@ class Admin extends Component {
     const { accounts, contract } = this.props;
     try{
     const resp = await contract.methods.updateProperty(this.state.upd_address,this.state.upd_pin).send({from:accounts[0]});
-    alert('Property updated: ' + resp);
+    alert('Property'+this.state.upd_pin+' updated');
     this.checkProperties();
     } catch(e){
       console.log(e)
@@ -100,7 +100,7 @@ class Admin extends Component {
     event.preventDefault();
     const { accounts, contract } = this.props;
     const resp = await contract.methods.deleteProperty(this.state.del_pin).send({from:accounts[0]});
-    alert('Property deleted: ' + resp);
+    alert('Property'+this.state.del_pin+' added');
     this.checkProperties();
     
   }
