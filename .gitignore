@@ -2,3 +2,4 @@ landreg/build
 landreg/node_modules
 landreg/client/build
 landreg/client/node_modules
+landreg/.secret

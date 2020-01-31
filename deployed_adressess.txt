@@ -1,0 +1,17 @@
+> Network name:    'rinkeby-fork'
+> Network id:      4
+> Block gas limit: 0x98abfc
+
+Deploying 'Registry'
+--------------------
+> transaction hash:    0x3f02dd7fced885371c4f770b3cf564c76869f814f4b9690b1aeae1f431b26877
+> Blocks: 0            Seconds: 12
+> contract address:    0xb824c3dF0CB50122A9615D0B6C7208D6dfee07f9
+
+Deploying 'Mortgage'
+--------------------
+> transaction hash:    0xf066527754ae98f9f6ae8ffca880ec5822043ea81c07ea04be9f38225411d1b6
+> Blocks: 1            Seconds: 24
+> contract address:    0xAB07208116B921219e9DA8F57d5453F56E5bbb85
+
+on Rinkeby at https://rinkeby.etherscan.io/address/0x......
