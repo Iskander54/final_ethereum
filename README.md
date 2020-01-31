@@ -1,4 +1,4 @@
-# landreg
+# Land Registry
 
 ## Introduction
 
@@ -69,7 +69,9 @@ Get a look also at section [docker Installation](#docker-Installation).
 
 1. Go into ./client and `npm run start` to launch the dev server (local port is 8545 in getWeb3.js, you can change it if needed)
 
-1. Open your browser where metamask is installed and go on localhost:3000 ( Port may have change, check the npm run start logs)
+1. You can import the accounts on Metamask using the private keys provided by your ganache. If you have trouble using Metamask you can see [this tutorial](https://boxmining.com/metamask-tutorial/).
+
+1. Open your browser where Metamask is installed and go on localhost:3000 ( Port may have change, check the npm run start logs)
 
 ## Using Docker
 
@@ -84,7 +86,19 @@ Get a look also at section [docker Installation](#docker-Installation).
 
 1. Type `docker-compose up` to launch the app
 
-1. Go to your browser on `localhost:3001`
+1. Make sure your Metamask is link to local network port 8545. 
+
+1. While the docker is building and deploying, you can import the accounts on Metamask using the private keys provided below. If you have trouble using Metamask you can see [this tutorial](https://boxmining.com/metamask-tutorial/).
+
+| Accounts | Private keys |
+|--|--|
+| 0x42CAD0CA3716b4664c2658A0a48664369D511C54 | 80d7110b676b1cb7f719bc7aa639a10a6d1611f1bd5ff7e94995da52915710de |
+| 0xDf7064894A0da6b741b86104af7875647b7767A3 | ae327c532fcc5254b701ca2a10f198787b93d37fe5c78cfe8531ce4373aa182e |
+| 0x229846d7818D13a468cB9767c04e375a82CE0e3D | 85b4ae0e89b5dd0ac460dcf1806af39c0ce59ee567f56d520ba1c0144a5a1537 |
+| 0x62bCb1BAa29f52b5CE165Db1A6aCEA9972b2f643 | d42e7182f3dda9b1b0353e083c178930bf169073a8b4634cc96cfcc48cd896b9 |
+
+
+1. Wait for the docker to be up and Go to your browser on [localhost:3001](https:localhost:3001/)
 ### [Option] Run Docker with your own ganache
 
 You can run the dApp with your own ganache, to do so :
@@ -98,10 +112,21 @@ You can run the dApp with your own ganache, to do so :
 1. Type `docker run -e [HOST=XXXX, PORT=XXXX, NETWORKID=XXXX] landreg ` using the corresponding ganache parameters (you can see the default environment variable in the dockerfile used for docker-compose)
 
 In the docker-compose, Only 4 accounts have been imported :
-- 0x42CAD0CA3716b4664c2658A0a48664369D511C54 , 80d7110b676b1cb7f719bc7aa639a10a6d1611f1bd5ff7e94995da52915710de
-- 0xDf7064894A0da6b741b86104af7875647b7767A3 , ae327c532fcc5254b701ca2a10f198787b93d37fe5c78cfe8531ce4373aa182e
-- 0x229846d7818D13a468cB9767c04e375a82CE0e3D , 85b4ae0e89b5dd0ac460dcf1806af39c0ce59ee567f56d520ba1c0144a5a1537
-- 0x62bCb1BAa29f52b5CE165Db1A6aCEA9972b2f643 , d42e7182f3dda9b1b0353e083c178930bf169073a8b4634cc96cfcc48cd896b9
+| Accounts | Private keys |
+|--|--|
+
+| 0x42CAD0CA3716b4664c2658A0a48664369D511C54 | 80d7110b676b1cb7f719bc7aa639a10a6d1611f1bd5ff7e94995da52915710de |
+| 0xDf7064894A0da6b741b86104af7875647b7767A3 | ae327c532fcc5254b701ca2a10f198787b93d37fe5c78cfe8531ce4373aa182e |
+| 0x229846d7818D13a468cB9767c04e375a82CE0e3D | 85b4ae0e89b5dd0ac460dcf1806af39c0ce59ee567f56d520ba1c0144a5a1537 |
+| 0x62bCb1BAa29f52b5CE165Db1A6aCEA9972b2f643 | d42e7182f3dda9b1b0353e083c178930bf169073a8b4634cc96cfcc48cd896b9 |
+
+## Issues
+
+### Metamask
+Metamask can have some issues. Make sure to properly connect to the local network once ganache is launched(don't hesitate to switch to another network and come back). If you get the " RPC Error: Error: [ethjs-rpc]rpc error with payload" using Metamask, that means that you have to [reset](https://medium.com/singapore-blockchain-dapps/reset-metamask-nonce-766dd4c27ca8/) all your accounts and launch again the dApp.
+
+### Docker-compose
+You may encounter two errors while building the container, you don't need to take them into account, be sure that the build is succesful. If not, this mays real errors.
 
 ---
 
@@ -123,7 +148,7 @@ In the docker-compose, Only 4 accounts have been imported :
   - [x] Write a sentence or two explaining what the tests are covering, and explain why those tests were written.
 - [x] A development server to serve the front-end interface of the application.
   - [x] It can be something as simple as the [lite-server](https://www.npmjs.com/package/lite-server) used in the [Truffle Pet Shop tutorial](https://truffleframework.com/tutorials/pet-shop).
-- [x] A document [design_pattern_decisions.md](design_pattern_decisions.md) that explains the design patterns chosen.
+- [x] A document [design_pattern_decision.md](design_pattern_decision.md) that explains the design patterns chosen.
 - [x] A document [avoiding_common_attacks.md](avoiding_common_attacks.md) that explains what measures were taken to ensure that the contracts are not susceptible to common attacks.
 - [x] Implement/use a library or an EthPM package.
   - [ ] If the project does not require a library or an EthPM package, demonstrate how it would do that in a contract called `LibraryDemo.sol`.
@@ -181,3 +206,7 @@ In the docker-compose, Only 4 accounts have been imported :
   - [ ] uPort
   - [ ] Ethereum Name Service - a name registered on the ENS resolves to the contract, verifiable on `https://rinkeby.etherscan.io/<contract_name>`
   - [ ] Oracle
+
+  ## Core team
+
+- Alex-Kevin LOEMBE, loembe.ak@gmail.com , [Iskander54](https://github.com/Iskander54)

@@ -19,5 +19,3 @@ services:
       - ganache-cli
     ports:
       - 3001:3001
-    volumes:
-      - ./landreg/client/src:/client/src
