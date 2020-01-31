@@ -91,6 +91,7 @@ constructor() public{
   /// @return true to notify everything went well
   function deleteProperty(uint pin) public onlyOwner() returns(bool success) {
     require(properties[pin].owner!=address(0),"This PIN doens't exist");
+    properties[pin].owner=address(0);
     uint rowToDelete = properties[pin].listPointer;
     uint keyToMove   = propertyList[propertyList.length-1];
     propertyList[rowToDelete] = keyToMove;
