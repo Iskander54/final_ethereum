@@ -65,7 +65,7 @@ Get a look also at section [docker Installation](#docker-Installation).
 
 1. Make sure your Metamask is link to local network port 8545. 
 
-1. Go into ./landreg and `truffle migrate` to push the contracts on the blockchain
+1. Go into ./landreg and `truffle migrate ` to push the contracts on the blockchain. By default would be pushed on development server(127.0.0.1:8545) in truffle-config.js .
 
 1. Go into ./client and `npm run start` to launch the dev server (local port is 8545 in getWeb3.js, you can change it if needed)
 
@@ -95,7 +95,7 @@ You can run the dApp with your own ganache, to do so :
 
 1. Type `docker build -t landreg .`
 
-1. Type `docker run landreg HOST=XXXX PORT=XXX NETWORKID=XXXX` using the corresponding ganache parameters (you can see the default environment variable in the dockerfile used for docker-compose)
+1. Type `docker run -e [HOST=XXXX, PORT=XXXX, NETWORKID=XXXX] landreg ` using the corresponding ganache parameters (you can see the default environment variable in the dockerfile used for docker-compose)
 
 In the docker-compose, Only 4 accounts have been imported :
 - 0x42CAD0CA3716b4664c2658A0a48664369D511C54 , 80d7110b676b1cb7f719bc7aa639a10a6d1611f1bd5ff7e94995da52915710de
