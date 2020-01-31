@@ -23,14 +23,7 @@ contract('Mortgage', function (accounts) {
         
     })
 
-    
-/*
-    it("Unable to confirm a transaction if you are not a party", async () => {
-        const tId = await instance.submitTransaction(bank,client,prop_owner,2,5, 2,98,contract_addr,{value:5*(10**18)})
-        await catchRevert(instance.confirmTransaction(0,contract_addr,{from: accounts[4]}))
-    })
-    */
-
+    //Checking that the circuitbreaker is properly working when activated
     it("Circuit Breaker working", async () =>{
         const tId = await instance.submitTransaction(bank,client,prop_owner,2,5, 2,98,contract_addr,{value:5*(10**18)})
         await instance.circuitBreaker()
@@ -38,6 +31,7 @@ contract('Mortgage', function (accounts) {
 
     })
 
+    //Check that revokeTransaction() works properly
     it("Client, Bank or Client able to revoke contract ", async () => {
         const tId = await instance.submitTransaction(bank,client,prop_owner,2,5, 2,98,contract_addr,{value:5*(10**18)})
         const propconfirm = await instance.confirmTransaction(0,contract_addr,{from: prop_owner})
@@ -46,11 +40,13 @@ contract('Mortgage', function (accounts) {
         assert.equal(clientconfirm.logs[1].event,"ExecutionFailure","Transaction shouldn't be confirmed")
     })
 
+    //Check that guard checks about the money sent and the amount in the transaction has to be same
     it("check that bank has to deposit same amount has in the contract", async () => {
 
         await catchRevert(instance.submitTransaction(bank,client,prop_owner,2,5, 2,98,contract_addr,{value : 4}))
     })
 
+    //Check that the money is received in the contract 
     it("check that we can get the money in a contract",async()=>{
         const initial=parseInt(await instance.getDeposit(),10)
         const deposit=5*(10**18)
@@ -61,6 +57,7 @@ contract('Mortgage', function (accounts) {
 
     })
 
+    //Check that the transaction is executed (money transfered) when all parties signed the transaction 
     it("Check that the transaction is executed when all parties have sign the transaction", async () => {
         let actualPropowner = await web3.eth.getBalance(accounts[2])
      

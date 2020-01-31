@@ -16,11 +16,13 @@ contract('Registry',function(accounts){
         instance = await Registry.new()
     })
 
+    //Checking that guard check working on isProperty which is a function reused in other functions
     it("Checking property should be able only when there is more than one",async()=>{
         await instance.deleteProperty(1)
         await catchRevert(instance.isProperty(2))
     })
 
+    //Checking that newProperty is working
     it("Check new property is created",async()=>{
         const add=await instance.newProperty(alex,3)
         const check= await instance.isProperty(3)
@@ -28,6 +30,7 @@ contract('Registry',function(accounts){
         assert.equal(check,alex,"new property is not found")
     })
 
+        //Checking that getPropertyCount() works properly 
     it("Should add two property to the blockchain and count them",async()=>{
         const before = await instance.getPropertyCount()
         const tx1=await instance.newProperty(alex,5)
@@ -36,6 +39,7 @@ contract('Registry',function(accounts){
         assert.equal(nb.toNumber(),before.toNumber()+2,'the number of accounts is the same as the number of added accounts')
     })
 
+    //Checking that updateProperty() works properly
     it("Update a property that has been added ",async()=>{
         const add=await instance.newProperty(alex,3)
         const checkAdded= await instance.isProperty(3)
@@ -46,6 +50,7 @@ contract('Registry',function(accounts){
         assert.equal(checkUpdate,kevin,"The property hasnt changed owner")
     })
 
+    //Checking that guards check is working for deleting a property when you are not the owner
     it("Trying to delete a property when you not the owner of the contract",async()=>{
         const add=await instance.newProperty(kevin,3)
         const checkAdded= await instance.isProperty(3)
@@ -53,6 +58,7 @@ contract('Registry',function(accounts){
         
     })
 
+    //Checking that guards check is working for deleting a property when you are the owner
     it("Delete a property by the owner of the contract ",async()=>{
         const add=await instance.newProperty(kevin,3)
         const before= await instance.getPropertyCount()
