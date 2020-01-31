@@ -1,14 +1,10 @@
 # landreg
-## Codebase
-
-### The stack
-The platform runs a on ethereum smart contract Backend with ReactJS on the front ed.
 
 ## Introduction
 
 **LandReg** is a standalone smart contract that can be used to run a land registry. Plus, any user can lend money to any other user to buy one of Property. Each Property is identified by its PIN(int). 
 
-It is written in [Solidity](https://solidity.readthedocs.io/en/v0.5.3/index.html) and compiled using `solc` version [0.5.3](https://github.com/ethereum/solidity/releases/tag/v0.5.3).
+It is written in [Solidity](https://solidity.readthedocs.io/en/v0.5.3/index.html) and compiled using `solc` version [0.5.0](https://github.com/ethereum/solidity/releases/tag/v0.5.0).
 
 It can be deployed to an [Ethereum](https://ethereum.org) blockchain, be it the public [mainnet](https://etherscan.io), a public testnet like [Rinkeby](https://rinkeby.etherscan.io), a private blockchain, or on a local development blockchain like [Ganache](https://truffleframework.com/ganache).
 
