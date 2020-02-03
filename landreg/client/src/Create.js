@@ -128,12 +128,12 @@ class Create extends Component {
    <form onSubmit={this.createTransaction}>
         <p>Add a property on sale</p>
         <label>
-          Client of the mortgage:
+          Client of the mortgage (0x..):
           <input type="text" value={this.state.c_client} onChange={this.handleChangecclient} />
         </label>
         <br></br>
         <label>
-          Owner of the property :
+          Owner of the property (0x...):
           <input type="text" value={this.state.c_owner} onChange={this.handleChangecowner}/>
         </label>
         <br></br>
@@ -148,12 +148,12 @@ class Create extends Component {
         </label>
         <br></br>
         <label>
-          rates :
+          interest rates (in %):
           <input type="text" value={this.state.c_rates} onChange={this.handleChangecrates}/>
         </label>
         <br></br>
         <label>
-          length :
+          length (in month):
           <input type="text" value={this.state.c_length} onChange={this.handleChangeclength}/>
         </label>
         <br></br>
