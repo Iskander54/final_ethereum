@@ -2,7 +2,7 @@
 
 ## Introduction
 
-**LandReg** is a standalone smart contract that can be used to run a land registry. Plus, any user can lend money to any other user to buy one property. Each Property is identified by its PIN(int). 
+**LandReg** is a standalone smart contract that can be used to run a land registry. Plus, any user can lend money to any other user to buy one property. Each Property is identified by its PIN(int). This is a prototype for a dApp that would allow a state to deal with its land registry using smart contracts (dealing with ownership, sales, taxes etc...)
 
 It is written in [Solidity](https://solidity.readthedocs.io/en/v0.5.3/index.html) and compiled using `solc` version [0.5.0](https://github.com/ethereum/solidity/releases/tag/v0.5.0).
 
@@ -21,7 +21,7 @@ The **Land Registry** contracts manages a few features:
 - **Delete a Property** - The contract owner can delete a property to the registry
 
 ### Lending money
-- **Submit a transaction** - Any user can lend ether to any other user to transfer the ownership a property. For the ownership of the property to be transfer, every (lender of the money, the receiver that wants to buy a property and sell) party has to confirm the transaction. The smart contracts update directly the registry.
+- **Submit a transaction** - Any user can lend ether to any other user to transfer the ownership a property. For the ownership of the property to be transfer, every party (lender of the money, the receiver that wants to buy a property and the seller of that property)  has to confirm the transaction. The smart contracts update directly the registry.
 - **Confirm a transaction** Any user involved in a transaction can sign transaction it.
 - **Revoke a transaction**  If you have changed your mind after having confirmed the transaction before all the parties have signed the transaction, you can revoke your confirmation. 
 
