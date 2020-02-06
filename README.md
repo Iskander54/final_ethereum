@@ -59,6 +59,10 @@ Get a look also at section [docker Installation](#docker-Installation).
 
 1. Go into ./client and type `npm install` to install dependencies of the ReactJS frontend
 
+### Test the application
+
+1. You can run `truffle test` in the landreg folder to run the truffles tests. 
+
 ### Starting the application 
 
 1. Launch ganache on port 8545
