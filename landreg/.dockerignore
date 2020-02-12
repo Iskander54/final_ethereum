@@ -5,6 +5,7 @@ git
 Dockerfile
 LICENSE
 build
+.secret
 client/build
 client/node_modules
 client/README.md

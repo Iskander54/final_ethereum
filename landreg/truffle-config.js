@@ -17,11 +17,11 @@
  * phrase from a file you've .gitignored so it doesn't accidentally become public.
  *
  */
-const fs = require('fs');
-const HDWalletProvider = require('truffle-hdwallet-provider');
+//const fs = require('fs');
+//const HDWalletProvider = require('truffle-hdwallet-provider');
 
-const infuraURL = 'https://rinkeby.infura.io/v3/e09634ab1b364d3b803afa0fd209196f'
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+//const infuraURL = 'https://rinkeby.infura.io/v3/e09634ab1b364d3b803afa0fd209196f'
+//const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -50,13 +50,15 @@ module.exports = {
       host: process.env.HOST,     // Localhost (default: none)
       port: process.env.PORT,            // Standard Ethereum port (default: none)
       network_id: process.env.NETWORKID,       // Any network (default: none)
-     },
+     }
+     /*,
      rinkeby:{
        provider: () => new HDWalletProvider(mnemonic,infuraURL),
        network_id: 4,
        gas:5500000,
 
      }
+     */
 
     // Another network with more advanced options...
     // advanced: {
